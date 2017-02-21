@@ -1,0 +1,200 @@
+//-SCROLL-MENU
+//- +nav-scroll('home', 'about', 'contacts')
+mixin nav-scroll( ...items)
+  - var link = '#'
+    nav
+      each item in items
+        li
+          a(href='#{link + item}')= item
+
+//-MENU
+//- +nav('folder', 'html', 'home', 'about', 'contact')
+mixin nav(folder, type, ...items)
+  - var link = '/'
+  - var dot = '.'
+    nav
+      each item in items
+        li
+          a(href='#{folder +link + item + dot + type}')= item
+//-CONTENT
+//- +block(full,a)
+mixin block(package, n)
+  if(package == 'full')
+    if(n == 'a')
+      .section-title
+        h3.heading= a.mainTitle
+        p.excerpt= a.mainExcerpt
+      .media
+        .media-image
+          img(src="#{a.img}", alt="")
+        .media-body
+            h5.heading= a.title
+            p.excerpt= a.excerpt
+    else if(n == "b")
+            .section-title
+              h3.heading= b.mainTitle
+              p.excerpt= b.mainExcerpt
+            .media
+              .media-image
+                img(src="#{b.img}", alt="")
+              .media-body
+                h5.heading= b.title
+                p.excerpt= b.excerpt
+    else if(n == "c")
+            .section-title
+              h3.heading= c.mainTitle
+              p.excerpt= c.mainExcerpt
+            .media
+              .media-image
+                img(src="#{c.img}", alt="")
+              .media-body
+                h5.heading= c.title
+                p.excerpt= c.excerpt
+    else if(n == "d")
+            .section-title
+              h3.heading= d.mainTitle
+              p.excerpt= d.mainExcerpt
+            .media
+              .media-image
+                img(src="#{d.img}", alt="")
+              .media-body
+                h5.heading= d.title
+                p.excerpt= d.excerpt
+    else if(n == "e")
+            .section-title
+              h3.heading= e.mainTitle
+              p.excerpt= e.mainExcerpt
+            .media
+              .media-image
+                img(src="#{e.img}", alt="")
+              .media-body
+                h5.heading= e.title
+                p.excerpt= e.excerpt
+  else if(package == 'no-desc')
+    if(n == 'a')
+      .section-title
+        h3.heading= a.mainTitle
+      .media
+        .media-image
+          img(src="#{a.img}", alt="")
+        .media-body
+            h5.heading= a.title
+            p.excerpt= a.excerpt
+    else if(n == "b")
+            .section-title
+              h3.heading= b.mainTitle
+            .media
+              .media-image
+                img(src="#{b.img}", alt="")
+              .media-body
+                h5.heading= b.title
+                p.excerpt= b.excerpt
+    else if(n == "c")
+            .section-title
+              h3.heading= c.mainTitle
+            .media
+              .media-image
+                img(src="#{c.img}", alt="")
+              .media-body
+                h5.heading= c.title
+                p.excerpt= c.excerpt
+    else if(n == "d")
+            .section-title
+              h3.heading= d.mainTitle
+            .media
+              .media-image
+                img(src="#{d.img}", alt="")
+              .media-body
+                h5.heading= d.title
+                p.excerpt= d.excerpt
+    else if(n == "e")
+            .section-title
+              h3.heading= e.mainTitle
+            .media
+              .media-image
+                img(src="#{e.img}", alt="")
+              .media-body
+                h5.heading= e.title
+                p.excerpt= e.excerpt
+  else if(package == 'no-title')
+    if(n == 'a')
+      .media
+        .media-image
+          img(src="#{a.img}", alt="")
+        .media-body
+            h5.heading= a.title
+            p.excerpt= a.excerpt
+    else if(n == "b")
+            .media
+              .media-image
+                img(src="#{b.img}", alt="")
+              .media-body
+                h5.heading= b.title
+                p.excerpt= b.excerpt
+    else if(n == "c")
+            .media
+              .media-image
+                img(src="#{c.img}", alt="")
+              .media-body
+                h5.heading= c.title
+                p.excerpt= c.excerpt
+    else if(n == "d")
+            .media
+              .media-image
+                img(src="#{d.img}", alt="")
+              .media-body
+                h5.heading= d.title
+                p.excerpt= d.excerpt
+    else if(n == "e")
+            .media
+              .media-image
+                img(src="#{e.img}", alt="")
+              .media-body
+                h5.heading= e.title
+                p.excerpt= e.excerpt
+
+//-FORM
+//+form('send','name','phone','message')
+mixin form(button, ...items)
+  form(action="php/mail.php" method="post")
+    each item in items
+        p
+          label(for="#{item}") #{item}
+          input.field(name="#{item}" type="text")= item
+    p
+      label(for="message") message
+      textarea(cols="40" rows="5" name="message")
+    input(type="submit" name="submit" value="#{button}")
+
+
+//-Slider
+//- +slider(1,2,3,4,5)
+mixin slider(...items)
+    .owl-carousel#owl-carousel
+      each item in items
+        .slide
+          .clearfix
+            .section-title
+              h3=slider.title
+              p= slider.excerpt
+              a.button(href="#")=slider.button
+
+//OTHER
+
+mixin bar-mobile
+  .bar-mobile
+    span.top
+    span.middle
+    span.bottom
+
+
+
+        
+
+
+
+
+
+
+
+

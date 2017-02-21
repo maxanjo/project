@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    block title
+    //Favicon
+    link(rel="shortcut icon", href="img/favicon.ico" type="image/x-icon")
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    //Styles
+    block css
+      include style-home.jade
+      //build:css css/main.min.css
+      link(rel="stylesheet", href="src/css/fonts.css")
+      link(rel="stylesheet", href="src/css/bootstrap.css")
+      link(rel="stylesheet", href="src/css/main.css")
+      //endbuild 
+  body
+    block content
+    block vendor
+    //build:js scripts/main.min.js
+    script(src="src/scripts/common.js")
+    //endbuild
+    script.
+      function loadCss(hf){
+        var ms=document.createElement("link"); ms.rel="stylesheet";ms.href=hf;document.getElementsByTagName("body")[0].appendChild(ms);
+      }
+      loadCss ("css/vendor.min.css");
+      loadCss ("css/main.min.css");

@@ -1,0 +1,42 @@
+{
+    "slider": {
+        "title": "Lorem ipsum dolor sit amet.",
+        "excerpt": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, doloremque.",
+        "button": "learn more"
+        },
+    "a" : {
+    "mainTitle" : "Lorem ipsum dolor1.",
+    "mainExcerpt" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, nihil?1",
+    "title" : "Lorem ipsum dolor1.",
+    "excerpt": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum molestias cumque voluptatum nemo deserunt impedit totam, consectetur ab aspernatur rem1.",
+    "img" : "img/logo.png"
+    },
+    "b" : {
+    "mainTitle" : "Lorem ipsum dolor.2",
+    "mainExcerpt" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, nihil?2",
+    "title" : "Lorem ipsum dolor.2",
+    "excerpt": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum molestias cumque voluptatum nemo deserunt impedit totam, consectetur ab aspernatur rem.2",
+    "img" : "img/logo.png"
+    },
+    "c" : {
+    "mainTitle" : "Lorem ipsum dolor.3",
+    "mainExcerpt" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, nihil?3",
+    "title" : "Lorem ipsum dolor.3",
+    "excerpt": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum molestias cumque voluptatum nemo deserunt impedit totam, consectetur ab aspernatur rem.3",
+    "img" : "img/logo.png"
+    },
+    "d" : {
+    "mainTitle" : "Lorem ipsum dolor.4",
+    "mainExcerpt" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, nihil?4",
+    "title" : "Lorem ipsum dolor4.",
+    "excerpt": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum molestias cumque voluptatum nemo deserunt impedit totam, consectetur ab aspernatur rem4.",
+    "img" : "img/logo.png"
+    },
+    "e" : {
+    "mainTitle" : "Lorem ipsum dolor5.",
+    "mainExcerpt" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, nihil?5",
+    "title" : "Lorem ipsum dolor.5",
+    "excerpt": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum molestias cumque voluptatum nemo deserunt impedit totam, consectetur ab aspernatur rem.5",
+    "img" : "img/logo.png"
+    }
+  }

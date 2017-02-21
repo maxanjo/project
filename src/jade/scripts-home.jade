@@ -1,0 +1,26 @@
+append block js
+  script(src="node_modules/core-js/client/shim.min.js")
+  script(src="node_modules/zone.js/dist/zone.js")
+  script(src="node_modules/systemjs/dist/system.src.js")
+  script(src="systemjs.config.js")
+  //build:js scripts/vendor.min.js
+  script(src="src/scripts/jquery.min.js")
+  script(src="src/scripts/selectivizr-min.js")
+  script(src="src/scripts/jquery.easy-pie-chart.js")
+  script(src="src/scripts/jquery.easing.1.3.js")
+  script(src="src/scripts/jquery.countdown.js")
+  script(src="src/scripts/noframework.waypoints.js")
+  script(src="src/scripts/jquery.scrollTo-1.4.3.1.js")
+  script(src="src/scripts/jquery.parallax-1.1.3.js")
+  script(src="src/scripts/jquery.localscroll-1.2.7-min.js")
+  script(src="src/scripts/jquery.nicescroll.min.js")
+  script(src="src/scripts/animate-css.js")
+  script(src="src/scripts/owl.carousel.js")
+  script(src="src/scripts/jquery.parallax-scroll.js")
+  script(src="src/scripts/jquery.themepunch.tools.min.js")
+  script(src="src/scripts/jquery.themepunch.revolution.min.js")
+  script(src="src/scripts/jquery.magnific-popup.min.js")
+  script(src="src/scripts/odometer.js")
+
+  script.
+    System.import('main.js').catch(function(err){ console.error(err); });

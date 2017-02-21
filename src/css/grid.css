@@ -1,0 +1,141 @@
+/*Grid*/
+.container{
+  width: 940px;
+  margin: 0 auto;
+}
+.container-fluid{
+  
+}
+/*[class*="span"]{
+
+}*/
+
+.span1 {float:left; box-sizing: border-box; margin: 0 1.06%;  width: 6.21%  ;}
+.span2 {float:left; box-sizing: border-box; margin: 0 1.06%;  width: 14.54%;}
+.span3 {float:left; box-sizing: border-box; margin: 0 1.06%;  width: 22.86%;}
+.span4 {float:left; box-sizing: border-box; margin: 0 1.06%;  width: 31.2%;}
+.span5 {float:left; box-sizing: border-box; margin: 0 1.06%;  width: 39.53%;}
+.span6 {float:left; box-sizing: border-box; margin: 0 1.06%;  width: 47.85%;}
+.span7 {float:left; box-sizing: border-box; margin: 0 1.06%;  width: 56.19%;}
+.span8 {float:left; box-sizing: border-box; margin: 0 1.06%;  width: 64.52%;}
+.span9 {float:left; box-sizing: border-box; margin: 0 1.06%;  width: 72.85%;}
+.span10{float:left; box-sizing:border-box; margin: 0 1.06%;  width: 81.17%  ;}
+.span11{float:left; box-sizing:border-box; margin: 0 1.06%;  width: 89.5% ;}
+.span12{float:left; box-sizing:border-box; margin: 0;  width: 100%    ;}
+
+.offset1{margin-left:  8.33%  ; }
+.offset2{margin-left:  16.66% ;}
+.offset3{margin-left:  24.99% ;}
+.offset4{margin-left:  33.32% ;}
+.offset5{margin-left:  41.65% ;}
+.offset6{margin-left:  47.85% ;}
+.offset7{margin-left:  58.31% ;}
+.offset8{margin-left:  66.64% ;}
+.offset9{margin-left:  74.97% ;}
+.offset10{margin-left:  83.3% ;}
+.offset11{margin-left:  91.63%;}
+.offset12{margin-left:  100%  ;}
+
+
+
+.row{
+  margin-bottom: 20px;
+}
+
+.row:after{
+  display: block;
+  content:" . ";
+  clear: both;
+  height: 0;
+  visibility: hidden;
+}
+
+/*Media*/
+/*Extra small devices Phones (<768px)*/
+@media only screen and (max-width: 768px){
+.span1   {margin: 0; width: 100%}
+.span2   {margin: 0; width: 100%}
+.span3   {margin: 0; width: 100%}
+.span4   {margin: 0; width: 100%}
+.span5   {margin: 0; width: 100%}
+.span6   {margin: 0; width: 100%}
+.span7   {margin: 0; width: 100%}
+.span8   {margin: 0; width: 100%}
+.span9   {margin: 0; width: 100%}
+.span10 {margin: 0; width: 100%}
+.span11 {margin: 0; width: 100%}
+.span12 {margin: 0; width: 100%}
+
+.offset1{margin-left:  0; }
+.offset2{margin-left:  0;}
+.offset3{margin-left:  0;}
+.offset4{margin-left:  0;}
+.offset5{margin-left:  0;}
+.offset6{margin-left:  0;}
+.offset7{margin-left:  0;}
+.offset8{margin-left:  0;}
+.offset9{margin-left:  0;}
+.offset10{margin-left:0;}
+.offset11{margin-left:0;}
+.offset12{margin-left:0 ;}
+}
+/*Medium devices Desktops (≥992px)*/
+@media only screen and (max-width: 992px){
+/*.span1   {width: 6.21%  ;}
+.span2   {width: 14.54%;}
+.span3   {width: 22.86%;}
+.span4   {width: 31.2%;;}
+.span5   {width: 39.53%;}
+.span6   {width: 47.85%;}
+.span7   {width: 56.19%;}
+.span8   {width: 64.52%;}
+.span9   {width: 72.85%;}
+.span10  {width: 81.17%;}
+.span11  {width: 89.5% ;;}
+.span12  {width: 97.88%;}
+
+.offset1{margin-left:  0; }
+.offset2{margin-left:  0;}
+.offset3{margin-left:  0;}
+.offset4{margin-left:  0;}
+.offset5{margin-left:  0;}
+.offset6{margin-left:  0;}
+.offset7{margin-left:  0;}
+.offset8{margin-left:  0;}
+.offset9{margin-left:  0;}
+.offset10{margin-left:0;}
+.offset11{margin-left:0;}
+.offset12{margin-left:0 ;}
+*/
+}
+@media only screen and (max-width: 1200px){
+/*span1   {width: 6.21%  ;}
+.span2   {width: 14.54%;}
+.span3   {width: 22.86%;}
+.span4   {width: 31.2%;;}
+.span5   {width: 39.53%;}
+.span6   {width: 47.85%;}
+.span7   {width: 56.19%;}
+.span8   {width: 64.52%;}
+.span9   {width: 72.85%;}
+.span10  {width: 81.17%;}
+.span11  {width: 89.5% ;;}
+.span12  {width: 97.88%;}
+
+.offset1{margin-left:  0; }
+.offset2{margin-left:  0;}
+.offset3{margin-left:  0;}
+.offset4{margin-left:  0;}
+.offset5{margin-left:  0;}
+.offset6{margin-left:  0;}
+.offset7{margin-left:  0;}
+.offset8{margin-left:  0;}
+.offset9{margin-left:  0;}
+.offset10{margin-left:0;}
+.offset11{margin-left:0;}
+.offset12{margin-left:0 ;}*/
+}
+
+
+
+

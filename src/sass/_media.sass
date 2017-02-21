@@ -1,0 +1,75 @@
+@import mixins
+*, .container-fluid
+  margin: 0
+  outline: none
+  padding: 0
+  box-sizing: border-box
+
+#menu.fixed
+  position: fixed
+  top: 0
+  z-index: 999
+
+.owl-carousel, .owl-stage-outer, .owl-stage:after, .owl-item.cloned, .owl-carousel .owl-stage, .owl-item.cloned.active,
+.owl-item.cloned, .owl-item.active
+  height: inherit!important
+
+.owl-carousel  .owl-wrapper,
+.owl-carousel  .owl-item
+  -webkit-backface-visibility: hidden
+  -moz-backface-visibility:    hidden
+  -ms-backface-visibility:     hidden
+  -webkit-transform: translate3d(0,0,0)
+  -moz-transform: translate3d(0,0,0)
+  -ms-transform: translate3d(0,0,0)
+
+.odometer.odometer-auto-theme .odometer-digit, .odometer.odometer-theme-car .odometer-digit
+  background: none
+  border: none
+  box-shadow: none
+  padding: 0
+  height: auto
+  display: inline-block
+.odometer.odometer-auto-theme .odometer-digit .odometer-digit-inner, .odometer.odometer-theme-car .odometer-digit .odometer-digit-inner
+  left: 0
+.odometer.odometer-auto-theme, .odometer.odometer-theme-car
+  background: none
+  color: #000
+  border-radius: 0
+.odometer.odometer-auto-theme, .odometer.odometer-theme-car
+  border-radius: 0
+  padding: 0
+.odometer.odometer-auto-theme .odometer-digit:last-child, .odometer.odometer-theme-car .odometer-digit:last-child
+  background: none
+
+
+
+
+.row
+  margin-left: 0
+  margin-right: 0
+
+
+li
+  list-style: none
+
+
+::-webkit-input-placeholder
+   background: default
+
+::selection
+     background: default
+
+input:focus:invalid,
+textarea:focus:invalid
+  border-color: red
+
+input:required:valid, 
+textarea:required:valid
+  border-color: green
+
+.vertical
+  display: table-cell
+  vertical-align: middle
+  height: inherit
+  width: inherit
