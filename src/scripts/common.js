@@ -109,6 +109,27 @@ $(window).scroll(function(){
     }                                     
 });
 
+/*//REVOLUTION-SLIDER
+  $('.fullwidthbanner').revolution(
+  {
+    delay:59000,
+    startheight:800,
+    disableProgressBar: 'off',
+    spinner: 'spinner1',
+    hideThumbs:200,
+    stopAfterLoops:0, 
+    minHeight: 500,
+    spinner: 'spinner1',
+    hideThumbs:200,
+    stopAfterLoops:0, 
+    navigationType:"bullet",
+    navigationArrows: "verticalCentered",
+    navigationStyle:"preview1",
+    shadow:1,
+    fullWidth:"on",
+  }
+);*/
+
 // Плавный скролл
 
 //  $("html").niceScroll({
