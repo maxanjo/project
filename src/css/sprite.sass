@@ -8,6 +8,28 @@
 //
 // At the bottom of this section, we provide information about the spritesheet itself
 // $spritesheet: width height image $spritesheet-sprites
+$bar-h-name: 'bar-h'
+$bar-h-x: 0px
+$bar-h-y: 46px
+$bar-h-offset-x: 0px
+$bar-h-offset-y: -46px
+$bar-h-width: 24px
+$bar-h-height: 24px
+$bar-h-total-width: 82px
+$bar-h-total-height: 70px
+$bar-h-image: 'sprite.png'
+$bar-h: (0px, 46px, 0px, -46px, 24px, 24px, 82px, 70px, 'sprite.png', 'bar-h', )
+$bar-name: 'bar'
+$bar-x: 34px
+$bar-y: 46px
+$bar-offset-x: -34px
+$bar-offset-y: -46px
+$bar-width: 24px
+$bar-height: 24px
+$bar-total-width: 82px
+$bar-total-height: 70px
+$bar-image: 'sprite.png'
+$bar: (34px, 46px, -34px, -46px, 24px, 24px, 82px, 70px, 'sprite.png', 'bar', )
 $slider-arrow-left-name: 'slider-arrow-left'
 $slider-arrow-left-x: 0px
 $slider-arrow-left-y: 0px
@@ -16,9 +38,9 @@ $slider-arrow-left-offset-y: 0px
 $slider-arrow-left-width: 36px
 $slider-arrow-left-height: 36px
 $slider-arrow-left-total-width: 82px
-$slider-arrow-left-total-height: 36px
+$slider-arrow-left-total-height: 70px
 $slider-arrow-left-image: 'sprite.png'
-$slider-arrow-left: (0px, 0px, 0px, 0px, 36px, 36px, 82px, 36px, 'sprite.png', 'slider-arrow-left', )
+$slider-arrow-left: (0px, 0px, 0px, 0px, 36px, 36px, 82px, 70px, 'sprite.png', 'slider-arrow-left', )
 $slider-arrow-right-name: 'slider-arrow-right'
 $slider-arrow-right-x: 46px
 $slider-arrow-right-y: 0px
@@ -27,14 +49,14 @@ $slider-arrow-right-offset-y: 0px
 $slider-arrow-right-width: 36px
 $slider-arrow-right-height: 36px
 $slider-arrow-right-total-width: 82px
-$slider-arrow-right-total-height: 36px
+$slider-arrow-right-total-height: 70px
 $slider-arrow-right-image: 'sprite.png'
-$slider-arrow-right: (46px, 0px, -46px, 0px, 36px, 36px, 82px, 36px, 'sprite.png', 'slider-arrow-right', )
+$slider-arrow-right: (46px, 0px, -46px, 0px, 36px, 36px, 82px, 70px, 'sprite.png', 'slider-arrow-right', )
 $spritesheet-width: 82px
-$spritesheet-height: 36px
+$spritesheet-height: 70px
 $spritesheet-image: 'sprite.png'
-$spritesheet-sprites: ($slider-arrow-left, $slider-arrow-right, )
-$spritesheet: (82px, 36px, 'sprite.png', $spritesheet-sprites, )
+$spritesheet-sprites: ($bar-h, $bar, $slider-arrow-left, $slider-arrow-right, )
+$spritesheet: (82px, 70px, 'sprite.png', $spritesheet-sprites, )
 
 // The provided mixins are intended to be used with the array-like variables
 //
