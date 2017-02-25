@@ -23,6 +23,7 @@ var gulp = require('gulp'),
        minifyCss = require('gulp-minify-css'),
        concat = require('gulp-concat'),
        sysBuilder = require('systemjs-builder'),
+       autoprefixer = require('gulp-autoprefixer'),
        fs = require('fs');
 
 // Cleaner
@@ -36,6 +37,7 @@ gulp.task('clear', function () {
   return cache.clearAll();
 });
 
+// Copy libs
 gulp.task('copy:libs', function(){
   //Fonts
   gulp.src('src/fonts/**/*')
@@ -54,27 +56,7 @@ gulp.task('copy:libs', function(){
 
   gulp.src(['app/**/*.js'])
     .pipe(gulp.dest('dist/scripts'));
-
-  // concatenate non-angular2 libs, shims & systemjs-config
-  gulp.src([
-    'node_modules/jquery/dist/jquery.min.js',
-    'node_modules/bootstrap/dist/js/bootstrap.min.js',
-    'node_modules/es6-shim/es6-shim.min.js',
-    'node_modules/es6-promise/dist/es6-promise.min.js',
-    'node_modules/zone.js/dist/zone.js',
-    'node_modules/reflect-metadata/Reflect.js',
-    // 'node_modules/systemjs/dist/system-polyfills.js',
-    'node_modules/systemjs/dist/system.src.js',
-    'system.config.js',
-  ])
-    .pipe(concat('vendors.min.js'))
-    .pipe(uglify())
-    .pipe(gulp.dest('public/lib/js'));
 });
-
-
-
-
 
 // Sprites JPG PNG
 gulp.task('sprite', function () {
@@ -85,7 +67,6 @@ gulp.task('sprite', function () {
   }));
   return spriteData.pipe(gulp.dest('src/css'));
 });
-
 
 // Image-min
 gulp.task('img', () => {
@@ -149,13 +130,17 @@ gulp.task('sass', function () {
 
 // HtmL
 gulp.task('html', function() {
-  return gulp.src('dist/*.html')
+  gulp.src('dist/*.html')
     .pipe(htmlhint())
     .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(replace('<!--Styles--><link rel="stylesheet" href="css/vendor.min.css"><link rel="stylesheet" href="css/main.min.css">', ''))
-    .pipe(gulp.dest('dist'))
+    .pipe(replace('src/img', 'img'))
+    .pipe(replace('src/fonts', 'fonts'))
+    .pipe(gulp.dest('dist'));
+
 });
 
+// Compile-ts
 gulp.task('compile-ts', function(){
   var sourceTs = [
     config.allTs,
@@ -170,12 +155,8 @@ gulp.task('compile-ts', function(){
   .pipe(gulp.dest(config.outTs));
 })
 
-// Generate systemjs-based builds
-gulp.task('bundle:js', function() {
-  var builder = new sysBuilder('dist', './system.config.js');
-  return builder.buildStatic('scripts', 'dist/scripts/app.min.js');
-});
 
+// Watching
 gulp.task('watch', ['compile-ts', 'sass', 'jade'], function(){
   gulp.watch([config.allTs,], ['compile-ts']);
   gulp.watch('app/**/*.js', browser.reload);
@@ -190,16 +171,14 @@ gulp.task('watch', ['compile-ts', 'sass', 'jade'], function(){
     })
   });
 
-
 // Builder
-gulp.task('build',['img','copy:libs'], function () {
+gulp.task('build',['clean', 'img','copy:libs', 'uncss'], function () {
     return gulp.src('*.html')
         .pipe(useref())
         .pipe(gulpif('*.js', uglify()))
         .pipe(gulpif('*.css', minifyCss()))
+        .pipe(useref())
         .pipe(gulp.dest('dist'));
-
-
 })
 
 

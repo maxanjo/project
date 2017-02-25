@@ -109,7 +109,7 @@ $(window).scroll(function(){
     }                                     
 });
 
-/*//REVOLUTION-SLIDER
+//REVOLUTION-SLIDER
   $('.fullwidthbanner').revolution(
   {
     delay:59000,
@@ -128,7 +128,7 @@ $(window).scroll(function(){
     shadow:1,
     fullWidth:"on",
   }
-);*/
+);
 
 // Плавный скролл
 
@@ -137,13 +137,13 @@ $(window).scroll(function(){
 // });
   // Каруселька
   // Documentation: http://www.owlcarousel.owlgraphic.com/docs/api-options.html
- $("#owl-carousel").owlCarousel({
+/* $("#owl-carousel").owlCarousel({
   items: 1, 
 loop: true,
 autoplay:true,
 autoplayTimeout:3000,
 autoplayHoverPause:true,
- });
+ });*/
 
 
 // Аякс отправка формы 
@@ -173,7 +173,7 @@ $('#scroll-top').click(function(){
    });
 });
  // Плавный скролл меню
- $('#menu').localScroll(800);
+  $('#menu').localScroll(800);
 
 // Parallax Бэкграунда
 // Background must be fixed 
