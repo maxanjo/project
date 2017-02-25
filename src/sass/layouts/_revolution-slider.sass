@@ -1,0 +1,120 @@
+@import mixins
+@import vars
+@import ../css/sprite
+
+
+$heading-font: $robotoBold
+$excerpt-font: $openSans
+$button-font: $robotoBold
+$heading-size: 4rem
+$excerpt-size: 1.2rem
+$heading-color: #fff
+$excerpt-color: #fff
+
+#main-slider
+  z-index: 1
+  position: relative
+  &:hover .tparrows
+    opacity: .7
+  .style-1
+    text-align: center
+    h3.heading
+      color: $heading-color
+      font-size: $heading-size
+      text-transform: uppercase!important
+      display: inline-block!important
+      &::after
+        content: ""
+        display: block
+        margin: 10px
+        border-bottom: 1px solid $main
+      +m(768)
+        font-size: 3rem
+      +m(480)
+        font-size: 2rem
+      position: relative
+      display: block
+      font-family: $heading-font
+      font-weight: 100
+      +capitalize
+    p.excerpt
+      color: $excerpt-color
+      font-family: $excerpt-font
+      font-size: $excerpt-size
+      position: relative
+      font-weight: 100
+      margin-bottom: 40px
+      padding: 0 200px
+      +m(768)
+        padding: 0 40px
+        line-height: 2
+      +m(480)
+        padding: 0 20px
+    //PROGRESS
+  .tp-bannertimer
+    height: 7px
+    background: rgba(0,0,0,.24)
+    //NAVIGATION
+  .tparrows
+    background: rgba(255,255,255,.3)
+    width: 36px
+    height: 36px
+    box-sizing: content-box
+    padding: 4px
+    +br(24px)
+    position: relative
+    opacity: 0
+    transition: opacity .3s ease
+    z-index: 1
+    +m(768)
+      display: none
+    &:hover
+      opacity: 1
+  .tp-leftarrow
+    position: relative
+    left: 60px!important
+  .tp-leftarrow::before
+    content: ""
+    @include sprite($slider-arrow-left)
+  .tp-rightarrow
+    position: relative
+    right: 60px!important
+  .tp-rightarrow:before
+    content: ""
+    @include sprite($slider-arrow-right)
+  .tp-arr-imgholder
+    display: none
+  a.button
+    font-family: $button-font
+    font-size: 1.3rem
+    +m(480)
+      font-size: 1rem
+      display: block
+      margin: 10px 0
+      position: relative
+      top: 120px!important
+    +m(900)
+      position: relative
+      top: 30px
+    +m(700)
+      top: 60px
+    +uppercase
+    padding: 11px 38px
+    +no-decor
+    margin: 0 10px
+    color: #fff
+    +br(24px)
+    transition: .3s all ease
+    &:first-child
+      border: 2px solid #fff
+    &:first-child:hover
+      background: #fff
+      color: #000
+      border-color: #fff
+    &:last-child
+      background: $main
+      border: 2px solid $main
+    &:last-child:hover
+      color: #000
+      background: #fff
+      border: 2px solid #fff

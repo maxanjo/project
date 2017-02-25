@@ -1,0 +1,94 @@
+@import mixins
+@import vars
+@import ../css/sprite
+// Menu
+.fixed
+  +m(992)
+    position: absolute!important
+  +mm(992)
+    background: #fff
+    .prima-tc
+      color: #222!important
+    .logo
+      background: url(../img/logo-2.png) no-repeat!important
+    border-bottom: 1px solid #f1f1f1!important
+#menu
+  height: 80px
+  width: 100%
+  +m(992)
+    background: #222
+  +absolute
+  top: 0
+  left: 0
+  z-index: 4
+  .bar-mobile
+    display: none
+    +m(992)
+      display: block
+      float: right
+      +icon(24px)
+      background: #333
+      margin-top: 24px
+      padding: 8px
+      &::after
+        @include sprite($bar)
+      &:hover
+        background: #fff
+      &:hover::after
+        @include sprite($bar-h)
+  .logo
+    float: left
+    margin-top: 24px
+    width: 166px
+    height: 32px
+    +png(logo)
+  .second-nav
+    +absolute
+    +hidden
+    top: 90px
+    transition: .3s all ease
+    opacity: 0
+    top: 110px
+    li
+      padding: 15px
+      display: block
+      width: 200px
+      background: #222
+      border-bottom: 1px #333 solid
+      a
+        text-transform: capitalize
+        color: #ccc
+        +no-decor
+        font-size: 1.2rem
+        font-weight: bold
+        font-family: $montserrat
+  .prima-nav
+    +m(992)
+      display: none
+    position: relative
+    float: right
+    .prima-li
+      float: left
+      margin-top: 28px
+      &:hover .second-nav
+        +visible
+        top: 90px
+        opacity: 1
+      &::after
+        content: '/'
+        color: $main
+        display: inline-block
+        padding: 0 20px
+        font-weight: bold
+      &:last-child::after
+        display: none
+      .prima-tc
+        transition: .3s all ease
+        +no-decor
+        color: #fff
+        +uppercase
+        font-family: $montserrat
+        font-weight: bold
+        font-size: 1.1rem
+        &:hover
+          color: $main

@@ -1,7 +1,6 @@
 *, .container-fluid {
   margin: 0;
   outline: none;
-  padding: 0;
   box-sizing: border-box; }
 
 #menu.fixed {
@@ -127,6 +126,3 @@ textarea:required:valid {
   -moz-transition: all .2s ease-in-out;
   -o-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out; }
-
-p {
-  color: blue; }

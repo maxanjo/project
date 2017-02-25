@@ -1,0 +1,48 @@
+@import mixins
+@import bar-mobile
+@import vars
+@import ../css/sprite
+
+// Menu Mobile
+.menu-mobile
+  z-index: 3
+  width: 100%
+  background: #222
+  display: none
+  +mm(992)
+    display: none!important
+  +absolute
+  top: 80px
+  left: 0
+  padding-bottom: 40px
+  .prima-nav
+    margin-bottom: 0
+  .prima-li
+    padding: 10px
+    border-bottom: 1px solid #333
+  a
+    color: #fff
+    font-weight: bold
+    +no-decor
+    font-family: $montserrat
+  .prima-tc
+    letter-spacing: 1px
+    +uppercase
+    font-size: 1.2rem
+  .second-nav
+    display: none
+    li
+      padding: 10px 20px
+    a
+      +capitalize
+      font-weight: normal
+      font-size: 1.2rem
+    
+  .arrow-mobile::after
+    content: '>'
+    float: right
+    +rotate(90)
+  .arrow-mobile-a::after
+    content: '>'
+    float: right
+    +rotate(270)
