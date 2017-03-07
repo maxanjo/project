@@ -1,6 +1,29 @@
 @import mixins
 @import vars
 @import ../css/sprite
+
+$bg-menu: #140507  //background-menu
+$menu-height: 80px  //menu height
+$logo-section-width: 164px //width logo image
+$logo-height: 36px  //height logo image
+$float-menu: left //float menu right or left
+$padding-left-menu: 80px //padding menu from left
+$bg-second-nav: $bg-menu  //background second menu
+$color-prima: #fff  //color links main menu
+$color-second: #999 //color links second menu
+$font-size-prima: 16px  // size links main menu
+$font-size-second: 14px  //size links second menu
+$second-menu-font: $openSans  //font-family second menu
+$prima-menu-font: $openSans  //font-family main menu
+$second-nav-width: 200px  //width second menu
+$padding-second-li: 15px //padding links second menu
+$second-nav-margin-top: $menu-height + 20 //offset from top second menu
+$second-menu-transform: translateY(0)  //transformation second menu
+$second-menu-transform-hover: translateY(-20px) // and hover
+$right-section-margin: 0 //offset from right icons
+$icon-height: 16px //height of icons
+$icon-margin: 10px //margin icons
+
 // Menu
 .fixed
   +m(992)
@@ -13,14 +36,15 @@
       background: url(../img/logo-2.png) no-repeat!important
     border-bottom: 1px solid #f1f1f1!important
 #menu
-  height: 80px
+  height: $menu-height
   width: 100%
   +m(992)
-    background: #222
+    background: $bg-menu
   +absolute
   top: 0
   left: 0
   z-index: 4
+  background: $bg-menu
   .bar-mobile
     display: none
     +m(992)
@@ -38,22 +62,23 @@
         @include sprite($bar-h)
   .logo
     float: left
-    margin-top: 24px
-    width: 166px
-    height: 32px
+    margin-top: ($menu-height - $logo-height) / 2
+    width: $logo-section-width
+    height: $logo-height
     +png(logo)
   .second-nav
     +absolute
     +hidden
-    top: 90px
+    padding-left: 0
+    transform: $second-menu-transform
     transition: .3s all ease
     opacity: 0
-    top: 110px
+    top: $second-nav-margin-top
     li
-      padding: 15px
+      padding: $padding-second-li
       display: block
-      width: 200px
-      background: #222
+      width: $second-nav-width
+      background: $bg-second-nav
       border-bottom: 1px #333 solid
       a
         text-transform: capitalize
@@ -61,18 +86,19 @@
         +no-decor
         font-size: 1.2rem
         font-weight: bold
-        font-family: $openSans
+        font-family: $second-menu-font
   .prima-nav
     +m(992)
       display: none
     position: relative
-    float: right
+    padding-left: $padding-left-menu
+    float: $float-menu
     .prima-li
       float: left
-      margin-top: 28px
+      margin-top: ($menu-height - $font-size-prima) / 2
       &:hover .second-nav
         +visible
-        top: 90px
+        transform: $second-menu-transform-hover
         opacity: 1
       &::after
         content: '/'
@@ -80,15 +106,46 @@
         display: inline-block
         padding: 0 20px
         font-weight: bold
+        font-size: $font-size-prima
       &:last-child::after
         display: none
       .prima-tc
         transition: .3s all ease
         +no-decor
-        color: #fff
+        color: $color-prima
         +uppercase
-        font-family: $openSans
+        font-family: $prima-menu-font
         font-weight: bold
-        font-size: 1.1rem
+        font-size: $font-size-prima
         &:hover
           color: $main
+  .section-icons
+    float: right
+    margin-top: ($menu-height - $icon-height) / 2
+    margin-right: $right-section-margin
+    a
+      margin: 0 $icon-margin
+    .icon
+      +icon($icon-height)
+      background: transparent
+      padding: 0
+    .icon-search
+      &::after
+        @include sprite($search)
+      &:hover::after
+        @include sprite($search-h)
+    .icon-cart
+      &::after
+        @include sprite($cart)
+      span
+        display: inline-block
+        top: -10px
+        color: #fff
+        font-size: 10px
+        padding: 1px 4px
+        +br(100%)
+        position: relative
+        left: 16px
+        background: orange
+      &:hover::after
+        @include sprite($cart-h)
