@@ -157,8 +157,7 @@ gulp.task('compile-ts', function(){
 
 
 // Watching
-gulp.task('watch', ['compile-ts', 'sass', 'jade'], function(){
-  gulp.watch([config.allTs,], ['compile-ts']);
+gulp.task('watch', ['sass', 'jade'], function(){
   gulp.watch('app/**/*.js', browser.reload);
   gulp.watch(['*.jade', 'src/jade/**/*.jade'], ['jade'], browser.reload);
   gulp.watch('./src/scripts/**/*.js', browser.reload);
