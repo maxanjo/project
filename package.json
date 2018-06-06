@@ -3,12 +3,6 @@
   "version": "1.0.0",
   "description": "Angular 2 project with gulp",
   "main": "gulpfile.js",
-  "scripts": {
-    "tsc": "tsc",
-    "tsc:w": "tsc -w",
-    "typings": "typings",
-    "postinstall": "typings install"
-  },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/maxanjo/template.git"
@@ -48,8 +42,7 @@
     "gulp-useref": "^3.0.8",
     "gulp.spritesmith": "^6.2.1",
     "imagemin-pngquant": "^4.2.2",
-     "node-bourbon": "^4.2.8"
-
+    "node-bourbon": "^4.2.8"
   },
   "bugs": {
     "url": "https://github.com/maxanjo/template/issues"

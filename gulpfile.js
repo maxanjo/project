@@ -9,7 +9,7 @@ var gulp = require('gulp'),
        jade = require('gulp-jade'),
        notify = require('gulp-notify'),
        uncss = require('gulp-uncss'),
-       // sass = require('gulp-sass'),
+       sass = require('gulp-sass'),
        htmlmin = require('gulp-htmlmin'),
        htmlhint = require("gulp-htmlhint"),
        replace = require('gulp-replace'),
@@ -109,19 +109,19 @@ gulp.task('uncss', function () {
 });
 
 // Sass
-// gulp.task('sass', function () {
-//   return gulp.src('src/sass/**/*.sass')
-//     .pipe(sass.sync().on('error', notify.onError(function(err){
-//       return{
-//         title: 'Erorr in SASS',
-//         message: err.message,
-//         sound: true,
-//         icon: 'notify.png'
-//       }
-//     })))
-//     .pipe(gulp.dest('src/css'))
-//     .pipe(browser.reload({stream: true}))
-// });
+gulp.task('sass', function () {
+  return gulp.src('src/sass/**/*.sass')
+    .pipe(sass.sync().on('error', notify.onError(function(err){
+      return{
+        title: 'Erorr in SASS',
+        message: err.message,
+        sound: true,
+        icon: 'notify.png'
+      }
+    })))
+    .pipe(gulp.dest('src/css'))
+    .pipe(browser.reload({stream: true}))
+});
 
 // HtmL
 gulp.task('html', function() {
@@ -138,10 +138,11 @@ gulp.task('html', function() {
 
 
 // Watching
-gulp.task('watch', ['jade'], function(){
-  gulp.watch(['*.jade', 'src/jade/**/*.jade'], ['jade']).on('change', browser.reload);
+gulp.task('watch', ['jade', 'sass'], function(){
+  gulp.watch(['*.sass', 'src/sass/**/*.sass'], ['sass']).on('change', browser.reload);
+   gulp.watch(['*.jade'], ['jade']).on('change', browser.reload);
   gulp.watch('./src/scripts/**/*.js').on('change', browser.reload);
-  gulp.watch('src/sass/**/*.sass').on('change', browser.reload);
+  gulp.watch('src/css/**/*.css').on('change', browser.reload);
   browser({
     server: {
       baseDir: './'

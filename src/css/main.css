@@ -1,3 +1,6 @@
+a:hover {
+  color: #d13447; }
+
 *, .container-fluid {
   margin: 0;
   outline: none;
@@ -44,9 +47,11 @@
 .odometer.odometer-auto-theme .odometer-digit:last-child, .odometer.odometer-theme-car .odometer-digit:last-child {
   background: none; }
 
+.owl-carousel img {
+  height: auto !important; }
+
 .row {
-  margin-left: 0;
-  margin-right: 0; }
+  margin: 0 !important; }
 
 li {
   list-style: none; }
@@ -70,6 +75,27 @@ textarea:required:valid {
   vertical-align: middle;
   height: inherit;
   width: inherit; }
+
+.flex_box, .flex_item {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-align: flex-start;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  align-items: flex-start;
+  float: none; }
+
+h1, h2, h3, h4, h5, h6, p {
+  line-height: 1; }
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0; }
 
 .bar-mobile {
   outline: none;
