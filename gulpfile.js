@@ -1,8 +1,4 @@
 var gulp = require('gulp'),
-       tsc = require('gulp-typescript'),
-       config = require('./gulp.config')(),
-       tsProject = tsc.createProject('tsconfig.json'),
-       typings = require('typings'),
        sourcemaps =require('gulp-sourcemaps'),
        browser = require('browser-sync'),
        clean = require('gulp-clean'),
@@ -13,7 +9,7 @@ var gulp = require('gulp'),
        jade = require('gulp-jade'),
        notify = require('gulp-notify'),
        uncss = require('gulp-uncss'),
-       sass = require('gulp-sass'),
+       // sass = require('gulp-sass'),
        htmlmin = require('gulp-htmlmin'),
        htmlhint = require("gulp-htmlhint"),
        replace = require('gulp-replace'),
@@ -22,7 +18,6 @@ var gulp = require('gulp'),
        uglify = require('gulp-uglify'),
        minifyCss = require('gulp-minify-css'),
        concat = require('gulp-concat'),
-       sysBuilder = require('systemjs-builder'),
        autoprefixer = require('gulp-autoprefixer'),
        fs = require('fs');
 
@@ -114,19 +109,19 @@ gulp.task('uncss', function () {
 });
 
 // Sass
-gulp.task('sass', function () {
-  return gulp.src('src/sass/**/*.sass')
-    .pipe(sass.sync().on('error', notify.onError(function(err){
-      return{
-        title: 'Erorr in SASS',
-        message: err.message,
-        sound: true,
-        icon: 'notify.png'
-      }
-    })))
-    .pipe(gulp.dest('src/css'))
-    .pipe(browser.reload({stream: true}))
-});
+// gulp.task('sass', function () {
+//   return gulp.src('src/sass/**/*.sass')
+//     .pipe(sass.sync().on('error', notify.onError(function(err){
+//       return{
+//         title: 'Erorr in SASS',
+//         message: err.message,
+//         sound: true,
+//         icon: 'notify.png'
+//       }
+//     })))
+//     .pipe(gulp.dest('src/css'))
+//     .pipe(browser.reload({stream: true}))
+// });
 
 // HtmL
 gulp.task('html', function() {
@@ -140,29 +135,13 @@ gulp.task('html', function() {
 
 });
 
-// Compile-ts
-gulp.task('compile-ts', function(){
-  var sourceTs = [
-    config.allTs,
-    './main.ts',
-    config.typings
-  ]
-  var result= gulp
-  .src(sourceTs)
-  .pipe(sourcemaps.init())
-  .pipe(tsProject())
-  .pipe(sourcemaps.write('.'))
-  .pipe(gulp.dest(config.outTs));
-})
 
 
 // Watching
-gulp.task('watch', ['sass', 'jade'], function(){
-  gulp.watch('app/**/*.js', browser.reload);
-  gulp.watch(['*.jade', 'src/jade/**/*.jade'], ['jade'], browser.reload);
-  gulp.watch('./src/scripts/**/*.js', browser.reload);
-  gulp.watch('src/sass/**/*.sass', ['sass'], browser.reload);
-  gulp.watch('index.html', browser.reload);
+gulp.task('watch', ['jade'], function(){
+  gulp.watch(['*.jade', 'src/jade/**/*.jade'], ['jade']).on('change', browser.reload);
+  gulp.watch('./src/scripts/**/*.js').on('change', browser.reload);
+  gulp.watch('src/sass/**/*.sass').on('change', browser.reload);
   browser({
     server: {
       baseDir: './'
