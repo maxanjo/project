@@ -75,25 +75,25 @@ gulp.task('img', () => {
         .pipe(gulp.dest('dist'));
 });
 
-// Jade
-gulp.task('jade', function() {
-var config = JSON.parse(fs.readFileSync('src/content.json'));
+// // Jade
+// gulp.task('jade', function() {
+// var config = JSON.parse(fs.readFileSync('src/content.json'));
 
-     gulp.src('*.jade')
-    .pipe(jade({
-      locals: config,
-      pretty: true
-    }))
-    .on('error', notify.onError(function(err){
-      return{
-        title: 'ERORR in JADE',
-        message: err.message,
-        sound: true,
-        icon: 'notify.png'
-      }
-    }))
-    .pipe(gulp.dest('.'))
-});
+//      gulp.src('**/*.jade')
+//     .pipe(jade({
+//       locals: config,
+//       pretty: true
+//     }))
+//     .on('error', notify.onError(function(err){
+//       return{
+//         title: 'ERORR in JADE',
+//         message: err.message,
+//         sound: true,
+//         icon: 'notify.png'
+//       }
+//     }))
+//     .pipe(gulp.dest('.'))
+// });
 
 // Autoprefix css
 gulp.task('uncss', function () {
@@ -138,9 +138,9 @@ gulp.task('html', function() {
 
 
 // Watching
-gulp.task('watch', ['jade', 'sass'], function(){
+gulp.task('watch', ['sass'], function(){
   gulp.watch(['*.sass', 'src/sass/**/*.sass'], ['sass']).on('change', browser.reload);
-   gulp.watch(['*.jade'], ['jade']).on('change', browser.reload);
+   gulp.watch(['**/*.html']).on('change', browser.reload);
   gulp.watch('./src/scripts/**/*.js').on('change', browser.reload);
   gulp.watch('src/css/**/*.css').on('change', browser.reload);
   browser({

@@ -87,10 +87,12 @@
 
 // simple gradient
 =g($color1, $color2)
-  +background-image(linear-gradient($color1, $color2))
+  background: rgb(2,0,36)
+  background: linear-gradient(90deg, $color1 0%, $color2 100%)
 
 =gh($color1, $color2)
-  +background-image(linear-gradient(left, $color1, $color2))
+  background: rgb(2,0,36)
+  background: linear-gradient(90deg, $color1 0%, $color2 100%)
 
 // font-family
 =font($alias, $name)
