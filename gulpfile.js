@@ -97,9 +97,9 @@ gulp.task('img', () => {
 
 // Autoprefix css
 gulp.task('uncss', function () {
-    return gulp.src('dist/css/*.css')
+    return gulp.src('dist/css/main.min.css')
         .pipe(uncss({
-        html: ['dist/index.html']
+        html: ['dist/*.html', 'dist/**/*.html]
         }))
         .pipe(autoprefixer({
             browsers: ['last 40 versions'],
@@ -124,7 +124,7 @@ gulp.task('sass', function () {
 });
 
 // HtmL
-gulp.task('html', function() {
+gulp.task('dist',['uncss'], function() {
   gulp.src('dist/*.html')
     .pipe(htmlhint())
     .pipe(htmlmin({collapseWhitespace: true}))
@@ -150,7 +150,7 @@ gulp.task('watch', ['sass'], function(){
   });
 
 // Builder
-gulp.task('build',['clean', 'img','copy:libs', 'uncss'], function () {
+gulp.task('build',['img','copy:libs'], function () {
     return gulp.src('*.html')
         .pipe(useref())
         .pipe(gulpif('*.js', uglify()))
