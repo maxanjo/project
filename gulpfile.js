@@ -129,8 +129,7 @@ gulp.task('html', function() {
     .pipe(htmlhint())
     .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(replace('<!--Styles--><link rel="stylesheet" href="css/vendor.min.css"><link rel="stylesheet" href="css/main.min.css">', ''))
-    .pipe(replace('src/img', 'img'))
-    .pipe(replace('src/fonts', 'fonts'))
+    .pipe(replace('src/', ''))
     .pipe(gulp.dest('dist'));
 
 });
