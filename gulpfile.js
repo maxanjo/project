@@ -128,7 +128,7 @@ gulp.task('dist',['uncss'], function() {
   gulp.src('dist/*.html')
     .pipe(htmlhint())
     .pipe(htmlmin({collapseWhitespace: true}))
-    .pipe(replace('<!--Styles--><link rel="stylesheet" href="css/vendor.min.css"><link rel="stylesheet" href="css/main.min.css">', ''))
+    .pipe(replace('<link rel="stylesheet" href="css/vendor.min.css"><link rel="stylesheet" href="css/main.min.css">', ''))
     .pipe(replace('src/', ''))
     .pipe(gulp.dest('dist'));
 
