@@ -124,7 +124,7 @@ gulp.task('sass', function () {
 });
 
 // HtmL
-gulp.task('dist',['uncss'], function() {
+gulp.task('dist', function() {
   gulp.src('dist/*.html')
     .pipe(htmlhint())
     .pipe(htmlmin({collapseWhitespace: true}))
