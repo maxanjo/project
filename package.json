@@ -1,7 +1,7 @@
 {
-  "name": "angular-2-seed",
+  "name": "gulp-project",
   "version": "1.0.0",
-  "description": "Angular 2 project with gulp",
+  "description": "Gulp Project, Sass, Localhost server, refresh on change",
   "main": "gulpfile.js",
   "repository": {
     "type": "git",

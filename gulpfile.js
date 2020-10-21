@@ -99,7 +99,7 @@ gulp.task('img', () => {
 gulp.task('uncss', function () {
     return gulp.src('dist/css/main.min.css')
         .pipe(uncss({
-        html: ['dist/*.html', 'dist/**/*.html]
+        html: ['dist/*.html', 'dist/**/*.html']
         }))
         .pipe(autoprefixer({
             browsers: ['last 40 versions'],
